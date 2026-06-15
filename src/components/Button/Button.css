@@ -1,58 +1,56 @@
 .buttons {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 5pxx;
-	width: 80%;
-	margin: -30px;
-
-	}
-
-
-.button {
-		width: 40%;
-		padding: 3% -0%;
-		border: 2px solid #000;
-		border-radius: 5px;
-		font-size: clamp(8px, 5vw, 1rem);
-		font-weight: 600;
-		color: white;
-		background-color: #444;
-		box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
-		margin: 10px;
-		
-	  }
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 8%;
+}
 
 .top-buttons {
-	display: flex;
+	display: contents;
+}
 
+.top-buttons .button {
+	align-self: end;
 }
 
 .bottom-buttons {
-	display: flex;
-	flex: 1;
-	align-items: center;
-	flex-wrap: wrap;
+	display: contents;
+}
 
-  }
-  
-  .bottom-buttons .button {
-	width: 40%;
-	padding: 3% 0%;
-  }
+.bottom-buttons .button {
+	align-self: start;
+}
+
+.button {
+	width: 100%;
+	padding: 12% 4%;
+	border: 2px solid #000;
+	border-radius: 5px;
+	font-size: clamp(7px, 2.5cqi, 14px);
+	font-weight: 600;
+	color: white;
+	background-color: #444;
+	box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+	cursor: pointer;
+	transition: background-color 0.15s;
+}
 
 .button:active {
 	box-shadow: inset -4px 4px 0 #222;
-	font-size: 0.9rem;
+	transform: translate(-2px, 3px);
 }
 
 .button.shiny {
 	background-color: #07d0d9;
 }
 
+.button.shiny.active {
+	background-color: #00cc44;
+}
+
 .button.shiny:active {
-	box-shadow: inset -4px 4px 0 #222;
-	font-size: 0.9rem;
 	background-color: #00ff00;
 }
 
@@ -60,22 +58,6 @@
 	background-color: #bcbcbc;
 }
 
-@media only screen and (min-width: 768px) {
-	.buttons {
-	width: 50%;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	margin: 0 auto;
-	}
-	.top-buttons {
-	flex-basis: 50%;
-	}
-	.bottom-buttons {
-	flex-basis: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
-	}
-	}
-	
+.button.info.active {
+	background-color: #ff9800;
+}

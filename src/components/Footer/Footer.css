@@ -1,0 +1,25 @@
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 480px;
+	padding: 10px 15px;
+	margin-top: 5px;
+}
+
+.footer-item {
+	font-size: clamp(9px, 2.5vw, 12px);
+	color: #aaa;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.footer-item a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+.footer-item a:hover {
+	text-decoration: underline;
+}

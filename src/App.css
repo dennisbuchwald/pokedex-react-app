@@ -1,16 +1,78 @@
-body {
-	background-image: url("/public/background_1-2-0.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-}
-
-.App-header {
-	min-height: 100vh;
+.App {
+	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+	padding: 10px;
+}
+
+.pokedex {
+	position: relative;
+	width: 100%;
+	max-width: 320px;
+}
+
+.pokedex-bg {
+	width: 100%;
+	height: auto;
+	display: block;
+	user-select: none;
+	pointer-events: none;
+}
+
+.pokedex-lens {
+	position: absolute;
+	top: 13%;
+	left: 10%;
+	width: 12%;
+	height: 7%;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 10;
+	animation: lensPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes lensPulse {
+	0%, 100% { box-shadow: 0 0 6px rgba(0, 200, 255, 0.2); }
+	50% { box-shadow: 0 0 18px rgba(0, 200, 255, 0.65); }
+}
+
+.pokedex-number {
+	position: absolute;
+	top: 27.5%;
+	left: 20%;
+	font-family: "GBA-Font", sans-serif;
+	font-size: clamp(8px, 2.5vw, 12px);
+	color: #222;
+	z-index: 5;
+	pointer-events: none;
+}
+
+.pokedex-lens:hover {
+	animation: none;
+	box-shadow: 0 0 25px rgba(0, 200, 255, 0.8);
+}
+
+.pokedex-screen {
+	position: absolute;
+	top: 31%;
+	left: 18%;
+	width: 54%;
+	height: 22%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.pokedex-controls {
+	position: absolute;
+	top: 62%;
+	left: 12%;
+	width: 64%;
+	height: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

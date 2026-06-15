@@ -1,51 +1,56 @@
-@font-face {
-	font-family: "GBA-Font";
-	src: url(/public/PokemonGBA.ttf) format(truetype);
-}
-
-h1 {
-	color: black;
-}
-
-h2 {
-	color: black;
-	font-family: "GBA-Font", sans-serif;
-}
-
 .display {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		/* border-radius: 15px;
-		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); */
-		padding: 20px;
-		width: 70%;
-		height: auto;
-		margin: 90px auto;	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
-@media only screen and (min-width: 768px) {
-	.display {
-	width: 50%;
-	}
-	}
-	
 
 .pokemon-container {
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
-	margin-left: 0px;
+	gap: 2px;
+}
+
+.pokemon-loading {
+	font-family: "GBA-Font", sans-serif;
+	font-size: clamp(7px, 2cqi, 11px);
+	color: #555;
 }
 
 .pokemon-name {
-	margin-top: -10px;
-	font-size: 20px;
+	margin: 0;
+	font-size: clamp(7px, 2cqi, 12px);
+	color: black;
+	font-family: "GBA-Font", sans-serif;
+	white-space: nowrap;
+}
+
+.pokemon-id {
+	opacity: 0.5;
+	font-size: 0.85em;
 }
 
 .pokemon-image {
-	width: 160px;
+	width: 70%;
+	max-width: 96px;
 	height: auto;
 	display: block;
-	margin: 0 auto;
+	image-rendering: pixelated;
+}
+
+.pokemon-info {
+	text-align: center;
+	color: #333;
+	font-family: "GBA-Font", sans-serif;
+}
+
+.pokemon-info .pokemon-name {
+	margin: 0 0 2px 0;
+}
+
+.pokemon-info p {
+	margin: 1px 0;
+	font-size: clamp(6px, 1.8cqi, 10px);
 }

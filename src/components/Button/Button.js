@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Button.css";
 
 import buttonSound from "./button-sound-2.mp3";
@@ -7,9 +7,13 @@ export function Button({
 	handlePrevClick,
 	handleNextClick,
 	handleShinyMode,
+	handleInfo,
 	isShiny,
+	isInfo,
 }) {
-	const [active, setActive] = useState(false);
+	const playSound = () => {
+		new Audio(buttonSound).play();
+	};
 
 	return (
 		<div className="buttons">
@@ -18,7 +22,7 @@ export function Button({
 					className="button btn-prev"
 					onClick={() => {
 						handlePrevClick();
-						new Audio(buttonSound).play();
+						playSound();
 					}}
 				>
 					Vorheriges Pokemon
@@ -27,7 +31,7 @@ export function Button({
 					className="button btn-next"
 					onClick={() => {
 						handleNextClick();
-						new Audio(buttonSound).play();
+						playSound();
 					}}
 				>
 					Nächstes Pokemon
@@ -35,22 +39,20 @@ export function Button({
 			</div>
 			<div className="bottom-buttons">
 				<button
-					className={`button shiny ${isShiny && active ? "active" : ""}`}
+					className={`button shiny ${isShiny ? "active" : ""}`}
 					onClick={() => {
 						handleShinyMode();
-						setActive(true);
-						new Audio(buttonSound).play();
+						playSound();
 					}}
 				>
 					Shiny Mode
 				</button>
 				<button
-					className="button info"
-					disabled="disabled"
+					className={`button info ${isInfo ? "active" : ""}`}
 					onClick={() => {
-						new Audio(buttonSound).play();
+						handleInfo();
+						playSound();
 					}}
-					// Button funktioniert aktelll nicht. 
 				>
 					Info
 				</button>
